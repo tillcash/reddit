@@ -14,6 +14,7 @@ env:
 
 jobs:
   build-and-push-image:
+    if: ${{ github.event.inputs.target > 'v0.35.1' }}  # Build only if target is above the default
     runs-on: ubuntu-latest
     permissions:
       contents: read
